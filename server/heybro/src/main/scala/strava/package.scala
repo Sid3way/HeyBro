@@ -34,7 +34,7 @@ object stravaApi {
     val jsonString = response.body.right.get
     val json = Json.parse(response.body.right.get)
 
-    val polylinesFiles = File("./polylines.json").createIfNotExists()
+    val polylinesFiles = File("/www-dev/hey-bro/kml/polylines.json").createIfNotExists()
     val polylinesJson = Json.parse(polylinesFiles.contentAsString())
     var polylines = polylinesJson.asOpt[Polylines].get
 
