@@ -7,13 +7,11 @@ object KmlGen {
   case class ImageInfo(href: String, geoLoc: GeoLoc, comment: Option[String] = None)
 
   def imagesToKml(images: Seq[ImageInfo]) = {
-
-    <?xml version="1.0" encoding="UTF-8"?>
-      <kml xmlns="http://www.opengis.net/kml/2.2">
-        <Document>
-          {images.map(imgToPlacemark)}
-        </Document>
-      </kml>
+    <kml xmlns="http://www.opengis.net/kml/2.2">
+      <Document>
+        {images.map(imgToPlacemark)}
+      </Document>
+    </kml>
 
   }
 
@@ -33,5 +31,4 @@ object KmlGen {
       </ExtendedData>
     </Placemark>
   }
-
 }

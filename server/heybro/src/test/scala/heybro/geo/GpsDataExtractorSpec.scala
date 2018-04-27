@@ -1,7 +1,7 @@
 package heybro.geo
 
+import heybro.GeoLoc
 import heybro.exif.GpsDataExtractor
-import heybro.exif.GpsDataExtractor.GeoLoc
 import org.scalatest.{FlatSpec, Matchers}
 
 import scala.util.Success
