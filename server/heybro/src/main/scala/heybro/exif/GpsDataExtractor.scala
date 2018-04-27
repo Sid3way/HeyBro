@@ -4,12 +4,11 @@ import java.io.{File, FileInputStream, InputStream}
 
 import com.drew.imaging.ImageMetadataReader
 import com.drew.metadata.exif.GpsDirectory
+import heybro.GeoLoc
 
 import scala.util.Try
 
 object GpsDataExtractor {
-
-  case class GeoLoc(lat: Double, long: Double)
 
   def getGeoLocation(file: InputStream) = {
     val metadataTry = Try(ImageMetadataReader.readMetadata(file))
