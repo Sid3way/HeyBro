@@ -9,7 +9,7 @@ object KmlGen {
   def imagesToKml(images: Seq[ImageInfo]) = {
     <kml xmlns="http://www.opengis.net/kml/2.2">
       <Document>
-        {images.map(imgToPlacemark)}
+        { images.map(imgToPlacemark) }
       </Document>
     </kml>
 
