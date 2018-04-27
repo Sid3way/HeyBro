@@ -42,6 +42,7 @@ object stravaApi {
       case s: JsSuccess[List[ActivitySummary]] => {
         val activities: List[ActivitySummary] = s.get
         val newPolylines: List[String] = activities.map(activity => retreiveActivityById(activity.id))
+
         polylines = polylines.copy(polylines = polylines.polylines ++ newPolylines)
       }
       case e: JsError => {
@@ -61,7 +62,7 @@ object stravaApi {
     val response = request.send()
     val jsonString = response.body.right.get
     val json = Json.parse(response.body.right.get)
-    val polyline = (json \ "map" \ "polyline").get
-    polyline.toString()
+    val polyline = (json \ "map" \ "polyline").as[String]
+    polyline
   }
 }
