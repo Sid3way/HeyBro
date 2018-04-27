@@ -10,6 +10,8 @@ lazy val root = (project in file(".")).
     name := "HeyBro",
     libraryDependencies ++= Seq(
       scalaTest % Test,
+      metadataExtractor,
+      scalaXml,
       "com.softwaremill.sttp" %% "core" % "1.1.13",
       "com.typesafe.play" %% "play-json" % "2.6.7",
       "com.github.pathikrit" %% "better-files" % "3.4.0",
