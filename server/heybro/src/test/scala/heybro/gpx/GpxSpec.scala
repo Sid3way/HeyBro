@@ -11,8 +11,8 @@ import scala.xml.Elem
 class GpxSpec extends FlatSpec with MustMatchers {
 
   val result: Either[Seq[Throwable], Elem] = Gpx.process(
-    new FileInputStream(new File("./activity_1.gpx")),
-    new FileInputStream(new File("./activity_2.gpx"))
+    getClass.getResourceAsStream("/examples/activity_1.gpx"),
+    getClass.getResourceAsStream("/examples/activity_2.gpx")
   )
 
 
